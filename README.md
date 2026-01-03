@@ -1,14 +1,14 @@
-# 🌍 GlobeTrotter
+#GlobeTrotter
 
 **GlobeTrotter** is a modern, AI-enhanced travel planning application designed to help users obtain personalized itineraries, estimate costs, and visualize their trips.
 
 Built with **React**, **Node.js**, **Express**, **Prisma**, and **PostgreSQL**.
 
-![GlobeTrotter Screenshot](https://images.unsplash.com/photo-1469474932316-46b963129336?auto=format&fit=crop&w=1200&q=80)
+
 
 ---
 
-## 🚀 Features
+##  Features
 
 -   **Interactive Dashboard**: View recent trips and popular destinations.
 -   **Itinerary Builder**: Drag-and-drop or detailed daily planning.
@@ -27,7 +27,7 @@ Built with **React**, **Node.js**, **Express**, **Prisma**, and **PostgreSQL**.
 
 ---
 
-## 📦 How to Run Locally
+## How to Run Locally
 
 Follow these steps to set up the project on your machine.
 
@@ -96,7 +96,7 @@ Open your browser at `http://localhost:5173` to verify!
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
