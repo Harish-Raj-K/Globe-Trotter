@@ -1,245 +1,105 @@
-# Globe-Trotter
+# 🌍 GlobeTrotter
 
-GlobeTrotter– Empowering Personalized Travel Planning
+**GlobeTrotter** is a modern, AI-enhanced travel planning application designed to help users obtain personalized itineraries, estimate costs, and visualize their trips.
 
-Overall Vision 
+Built with **React**, **Node.js**, **Express**, **Prisma**, and **PostgreSQL**.
 
-The overarching vision for GlobeTrotter is to become a personalized, intelligent, and 
+![GlobeTrotter Screenshot](https://images.unsplash.com/photo-1469474932316-46b963129336?auto=format&fit=crop&w=1200&q=80)
 
-collaborative platform that transforms the way individuals plan and experience travel. The 
+---
 
-platform aims to empower users to dream, design, and organize trips with ease by 
+## 🚀 Features
 
-offering an end-to-end travel planning tool that combines flexibility and interactivity. 
+-   **Interactive Dashboard**: View recent trips and popular destinations.
+-   **Itinerary Builder**: Drag-and-drop or detailed daily planning.
+-   **Smart Budgeting**: Automatic cost estimation for activities and travel.
+-   **Visual Timeline**: See your trip flow at a glance.
+-   **Authentication**: Secure signup and login.
 
-It envisions a world where users can explore global destinations, visualize their journeys 
+---
 
-through structured itineraries, make cost-effective decisions, and share their travel plans 
+## 🛠️ Tech Stack
 
-within a community—making travel planning as exciting as the trip itself. 
+-   **Frontend**: React (Vite), CSS Modules, Lucide Icons
+-   **Backend**: Node.js, Express.js
+-   **Database**: PostgreSQL, Prisma ORM
+-   **Authentication**: JWT (JSON Web Tokens)
 
-Mission 
+---
 
-The mission for the hackathon team is to build a user-centric, responsive application that 
+## 📦 How to Run Locally
 
-simplifies the complexity of planning multi-city travel. The platform should provide 
+Follow these steps to set up the project on your machine.
 
-travelers with intuitive tools to: 
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Harish-Raj-K/Globe-Trotter.git
+cd Globe-Trotter
+```
 
-● Add and manage travel stops and durations 
+### 2. Install Dependencies
 
-● Explore cities and activities of interest 
+You need to install dependencies for both the **client** (frontend) and **server** (backend).
 
-● Estimate trip budgets automatically 
+**Server:**
+```bash
+cd server
+npm install
+```
 
-● Visualize timelines and plans 
+**Client:**
+```bash
+cd ../client
+npm install
+```
 
-● Share trip plans with others 
+### 3. Environment Setup
 
-This involves constructing a solution that is both functional and insightful, powered by a 
+Create a `.env` file in the `server` folder with the following variables:
 
-well-designed relational database and a smooth frontend experience. Teams must focus 
+```env
+# server/.env
 
-on enabling users to organize personalized trips efficiently, stay within budget, and enjoy 
+PORT=5000
+DATABASE_URL="postgresql://postgres:password@localhost:5432/globetrotter?schema=public"
+JWT_SECRET="your_super_secret_key"
+```
+*(Note: Replace `password` with your actual PostgreSQL password if different)*
 
-full visibility of their journey. 
+### 4. Database Setup
 
-Problem Statement
+Make sure your PostgreSQL server is running, then run the migrations and seed data:
 
-Design and develop a complete travel planning application where users can: 
+```bash
+# Inside the server/ directory
+npx prisma migrate dev --name init
+npx prisma db seed
+```
 
-● Create customized multi-city itineraries 
+### 5. Start the Application
 
-● Assign travel dates, activities, and budgets 
+You can run both client and server concurrently (if set up) or in separate terminals.
 
-● Discover activities and destinations through search 
+**Backend (Server):**
+```bash
+cd server
+npm run dev
+```
 
-● Receive cost breakdowns and visual calendars 
+**Frontend (Client):**
+```bash
+cd client
+npm run dev
+```
 
-● Share their plans publicly or with friends 
+Open your browser at `http://localhost:5173` to verify!
 
-The application must demonstrate proper use of relational databases to store and retrieve 
+---
 
-complex travel data such as user-specific itineraries, stops, activities, and estimated 
+## 🤝 Contributing
 
-expenses. The system should also support dynamic user interfaces that adapt to each 
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-user's trip flow.  
+## 📄 License
 
-Features: 
-
-The application for GlobalTrotters will include the following comprehensive set of 
-
-features, ensuring a rich and user-friendly experience across desktop or mobile 
-
-platforms: 
-
-1. Login / Signup Screen
-
-● Description: Entry point of the app allowing users to create or access their 
-
-account. 
-
-● Purpose: Authenticate users to manage personal travel plans. 
-
-● Key Functionality/Components: 
-
-Email & password fields, Login button, Signup link, "Forgot Password", basic 
-
-validation. 
-
-2. Dashboard / Home Screen
-
-● Description: Central hub showing upcoming trips, popular cities, and quick 
-
-actions. 
-
-● Purpose: Allows users to navigate to their trips and explore inspiration. 
-
-● Key Functionality/Components: 
-
-Welcome message, list of recent trips, “Plan New Tripˮ button, recommended 
-
-destinations, budget highlights. 
-
-3. Create Trip Screen
-
-● Description: Form to initiate a new trip by providing a name, travel dates, and a 
-
-description. 
-
-● Purpose: Begins the process of creating a personalized travel plan. 
-
-● Key Functionality/Components: 
-
-Trip name, start & end dates, trip description, cover photo upload (optional), save 
-
-button. 
-
-4. My Trips (Trip List) Screen
-
-● Description: List view of all trips created by the user with basic summary data. 
-
-● Purpose: Easily access and manage existing or upcoming trips. 
-
-● Key Functionality/Components: 
-
-Trip cards showing name, date range, destination count, edit/view/delete actions.  
-
-5. Itinerary Builder Screen
-
-● Description: Interface to add cities, dates, and activities for each stop. 
-
-● Purpose: Construct the full day-wise trip plan in an interactive format. 
-
-● Key Functionality/Components: 
-
-“Add Stopˮ button, select city and travel dates, assign activities to each stop, 
-
-reorder cities. 
-
-6. Itinerary View Screen
-
-● Description: Visual representation of the completed trip itinerary. 
-
-● Purpose: Review the full plan in a structured format (timeline or grouped by cities). 
-
-● Key Functionality/Components: 
-
-Day-wise layout, city headers, activity blocks with time and cost, view mode 
-
-toggle (calendar/list). 
-
-7. City Search
-
-● Description: Search interface to find and add cities to a trip, with info like country, 
-
-cost index, and popularity. 
-
-● Purpose: Discover and include relevant cities in the itinerary. 
-
-● Key Functionality/Components: 
-
-Search bar, list of cities with meta info, “Add to Tripˮ button, filter by 
-
-country/region. 
-
-8. Activity Search
-
-● Description: Browse and select things to do in each stop, categorized by interest 
-
-or cost. 
-
-● Purpose: Enrich trips with experiences like sightseeing, food tours, or adventure 
-
-activities. 
-
-● Key Functionality/Components: 
-
-Activity filters (type, cost, duration), add/remove buttons, quick view of 
-
-description and images. 
-
-9. Trip Budget & Cost Breakdown Screen
-
-● Description: Summarized financial view showing estimated total cost and 
-
-breakdowns. 
-
-● Purpose: Helps travelers stay informed and within budget. 
-
-● Key Functionality/Components: 
-
-Cost breakdown by transport, stay, activities, meals; pie/bar charts, average cost 
-
-per day, alerts for overbudget days. 
-
-10. Trip Calendar / Timeline Screen
-
-● Description: Calendar-based or vertical timeline view of the full itinerary. 
-
-● Purpose: Helps users visualize the journey and daily plan flow. 
-
-● Key Functionality/Components: 
-
-Calendar component, expandable day views, drag-to-reorder activities, quick 
-
-editing options. 
-
-11. Shared/Public Itinerary View Screen
-
-● Description: Public page displaying a sharable version of an itinerary. 
-
-● Purpose: Allows others to view, get inspired, or copy the trip. 
-
-● Key Functionality/Components: 
-
-Public URL, itinerary summary, “Copy Tripˮ button, social media sharing, read-only 
-
-view. 
-
-12. User Profile / Settings Screen
-
-● Description: User settings page to update profile information and preferences. 
-
-● Purpose: Enables users to control their data, preferences, and privacy. 
-
-● Key Functionality/Components: 
-
-Editable fields (name, photo, email), language preference, delete account, saved 
-
-destinations list. 
-
-13. Admin / Analytics Dashboard (Optional)
-
-● Description: Admin-only interface to track user trends, trip data, and platform 
-
-usage. 
-
-● Purpose: Helps in monitoring app adoption, popular cities, and user behavior. 
-
-● Key Functionality/Components: 
-
-Tables and charts of trips created, top cities/activities, user engagement stats, 
-
-user management tools. 
+[MIT](https://choosealicense.com/licenses/mit/)
